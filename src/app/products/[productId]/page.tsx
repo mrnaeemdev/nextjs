@@ -1,7 +1,14 @@
 import React from "react";
+import { Metadata } from "next";
 
 type PageProps = {
   params: { productId: string };
+};
+
+export const generateMetadata = ({ params }: PageProps): Metadata => {
+  return {
+    title: `Product ${params.productId}`,
+  };
 };
 
 const ProductDetail = ({ params }: PageProps) => {
